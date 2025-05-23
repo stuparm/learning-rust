@@ -9,7 +9,7 @@
 
 # IDE/editor files
 .idea/
-**/.idea/
+*/.idea/
 *.iml
 *.swp
 *.swo
