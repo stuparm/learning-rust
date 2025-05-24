@@ -46,15 +46,53 @@ fn main() {
 
     println!("The value of y is: {y}");
 
-    fn five() -> i32 {
-        5
+    fn one() -> i32 {
+        1
     }
 
-    let x = five();
+    let x = one();
 
     println!("The value of x is: {x}");
+    
+    if x > 3 {
+        println!("x is greater than 3");
+    } else {
+        println!("x is not greater than 3");
+    }
+    
+    let m = if x > 3 {
+        "x is greater than 3"
+    } else {
+        "x is not greater than 3"
+    };
+    println!("{m}");
+    
+    let mut counter = 0;
+    let result = loop {
+        counter+=1;
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+    println!("The result is: {result}");
+
+
+    let a = [10, 20, 30, 40, 50];
+    for i in a {
+        println!("The value is: {i}");
+    }
+    
+    let f = fibonacci(2);
+    println!("f: {f}");
 }
 
 fn another_function(a:i32, b:char) {
     println!("another function {a} {b}");
+}
+
+fn fibonacci(n:i32) -> i32 {
+    if n < 1 {
+        return n;
+    }
+    n + fibonacci(n-1)
 }
